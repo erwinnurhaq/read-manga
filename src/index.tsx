@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './styles/index.css';
+import App from './routers';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+
+if (window.self === window.top) {
+  document.body.style.display = 'block';
+} else if (window.top) {
+  window.top.location = window.self.location;
+}
 
 ReactDOM.render(
   <React.StrictMode>
