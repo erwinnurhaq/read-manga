@@ -1,4 +1,7 @@
 import { BrowserRouter, NavLink, Route } from 'react-router-dom';
+import Bookmark from '../pages/Bookmark';
+import Home from '../pages/Home';
+import Manga from '../pages/Manga';
 
 function App(): JSX.Element {
   return (
@@ -8,31 +11,15 @@ function App(): JSX.Element {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/view">View</NavLink>
+          <NavLink to="/manga/asdf">Manga</NavLink>
         </li>
         <li>
-          <NavLink to="/follows">Follows</NavLink>
+          <NavLink to="/bookmark">Bookmark</NavLink>
         </li>
       </ul>
-      <Route exact path="/" component={() => <div>Home</div>} />
-      <Route
-        exact
-        path="/view"
-        component={() => (
-          <div>
-            <p>View</p>
-          </div>
-        )}
-      />
-      <Route
-        exact
-        path="/follows"
-        component={() => (
-          <div>
-            <p>Follows</p>
-          </div>
-        )}
-      />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/manga/:mangaId" component={Manga} />
+      <Route exact path="/bookmark" component={Bookmark} />
     </BrowserRouter>
   );
 }
