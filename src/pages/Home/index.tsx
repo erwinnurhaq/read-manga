@@ -3,6 +3,7 @@ import { getLatestUpdateChapter } from '../../utils/queries';
 
 function Home() {
   const [updatedChapter, setUpdatedChapter] = useState([]);
+  const [updatedManga, setUpdatedManga] = useState([]);
 
   useEffect(() => {
     getLatestUpdateChapter()
