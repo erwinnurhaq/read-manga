@@ -1,30 +1,9 @@
 import axios from 'axios';
 import { BASE_URL } from '../constants/baseURL';
 import toQueryString from './toQueryString';
+import { Collection, DataRes, Relationships } from '../constants/interfaces';
 
-export interface Relationships {
-  id: string;
-  type: string;
-  attributes?: unknown;
-}
-
-export interface Data {
-  id: string;
-  type: string;
-  attributes?: unknown;
-  relationships?: unknown[];
-}
-
-export interface Collection {
-  data: unknown[];
-  limit: number;
-  offset: number;
-  response: string;
-  result: string;
-  total: number;
-}
-
-export interface ChapterData extends Data {
+export interface ChapterData extends DataRes {
   relationships: Relationships[];
 }
 
