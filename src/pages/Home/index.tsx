@@ -1,10 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { getLatestUpdateChapter } from '../../utils/queries';
 
 function Home() {
-  const [updatedChapter, setUpdatedChapter] = useState([]);
-  const [updatedManga, setUpdatedManga] = useState([]);
-
   useEffect(() => {
     getLatestUpdateChapter()
       .then((result) => {
