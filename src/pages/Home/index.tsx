@@ -3,6 +3,7 @@ import { getLatestUpdateChapter } from '../../utils/queries';
 
 function Home() {
   useEffect(() => {
+    // test
     getLatestUpdateChapter()
       .then((result) => {
         console.log(result);
