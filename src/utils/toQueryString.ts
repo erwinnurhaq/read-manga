@@ -13,6 +13,7 @@ function toQueryString(params: { [key: string]: any }): string {
     })
     .flat()
     .join('&');
+    
   return string ? `?${string}` : '';
 }
 
