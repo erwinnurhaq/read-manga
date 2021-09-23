@@ -1,7 +1,7 @@
 interface ChapterCardProps {
   mangaCover: string;
   mangaTitle: string;
-  chapter: string;
+  chapter: number;
   title: string;
   language: string;
   publishAt: string;
