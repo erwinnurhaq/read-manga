@@ -18,7 +18,7 @@ function ChapterCard(props: ChapterCardProps) {
         Ch:${chapter}${title ? ` - ${title}` : ''}${language ? ` (${language})` : ''}
       </p>
       <p>{scanlator}</p>
-      <p>{publishAt}</p>
+      <p>{new Date(publishAt).toLocaleString()}</p>
     </div>
   );
 }
