@@ -1,24 +1,22 @@
+import { Chapter } from '../../../constants/interfaces';
+
 interface ChapterCardProps {
-  mangaCover: string;
-  mangaTitle: string;
-  chapter: number;
-  title: string;
-  language: string;
-  publishAt: string;
-  scanlator: string;
+  chapter: Chapter;
+  onClick: (data: Chapter) => void;
 }
 
-function ChapterCard(props: ChapterCardProps) {
-  const { mangaCover, mangaTitle, chapter, title, language, publishAt, scanlator } = props;
+function ChapterCard({ chapter, onClick }: ChapterCardProps) {
   return (
-    <div>
-      <img src={mangaCover || ''} alt={mangaCover || ''} />
-      <h5>{mangaTitle}</h5>
+    <div role="button" onClick={() => onClick(chapter)}>
+      <img src={chapter.mangaCover || ''} alt={chapter.mangaCover || ''} />
+      <h5>{chapter.mangaTitle}</h5>
       <p>
-        Ch:${chapter}${title ? ` - ${title}` : ''}${language ? ` (${language})` : ''}
+        Ch:{chapter.chapter}
+        {chapter.title ? ` - ${chapter.title}` : ''}
+        {chapter.language ? ` (${chapter.language})` : ''}
       </p>
-      <p>{scanlator}</p>
-      <p>{new Date(publishAt).toLocaleString()}</p>
+      <p>{chapter.scanlator}</p>
+      <p>{new Date(chapter.publishAt).toLocaleString()}</p>
     </div>
   );
 }

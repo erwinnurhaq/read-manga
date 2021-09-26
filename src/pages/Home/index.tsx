@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
+import { useContext } from 'react';
+import { GlobalContext } from '../../context';
 import ChapterCard from './components/ChapterCard';
 
-const mockData = new Array(10).fill().map((i, idx) => ({
+const mockData = new Array(10).fill({}).map((i, idx) => ({
+  id: `${idx + 1}`,
   mangaCover: `some-mangaCover-${idx + 1}`,
   mangaTitle: `some-mangaTitle-${idx + 1}`,
   chapter: idx + 1,
@@ -12,11 +14,15 @@ const mockData = new Array(10).fill().map((i, idx) => ({
 }));
 
 function Home() {
+  const { selectedChapter, setSelectedChapter } = useContext(GlobalContext);
+
+  console.log(selectedChapter)
+
   return (
     <div>
       <h1>Latest Updated Chapter</h1>
-      {mockData.map(data => (
-        <ChapterCard {...data} />
+      {mockData.map(chapter => (
+        <ChapterCard key={chapter.id} chapter={chapter} onClick={setSelectedChapter} />
       ))}
     </div>
   );

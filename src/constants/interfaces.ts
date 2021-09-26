@@ -19,3 +19,18 @@ export interface Relationships {
   type: string;
   attributes?: unknown;
 }
+
+export interface Manga {
+  id?:string;
+}
+
+export interface Chapter {
+  id: string;
+  mangaCover: string;
+  mangaTitle: string;
+  chapter: number;
+  title: string;
+  language: string;
+  publishAt: string;
+  scanlator: string;
+}
