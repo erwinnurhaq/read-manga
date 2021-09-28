@@ -15,13 +15,11 @@ const mockData = new Array(10).fill({}).map((i, idx) => ({
 
 function Home() {
   const { selectedChapter, setSelectedChapter } = useContext(GlobalContext);
-
-  console.log(selectedChapter)
-
+  console.log(selectedChapter);
   return (
     <div>
       <h1>Latest Updated Chapter</h1>
-      {mockData.map(chapter => (
+      {mockData.map((chapter) => (
         <ChapterCard key={chapter.id} chapter={chapter} onClick={setSelectedChapter} />
       ))}
     </div>
