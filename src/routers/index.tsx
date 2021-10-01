@@ -11,7 +11,7 @@ const App = () => (
     <BrowserRouter>
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">Home+</NavLink>
         </li>
         <li>
           <NavLink to="/manga/asdf">Manga</NavLink>
