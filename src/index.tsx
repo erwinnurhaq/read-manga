@@ -11,6 +11,7 @@ if (window.self === window.top) {
   window.top.location = window.self.location;
 }
 
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
