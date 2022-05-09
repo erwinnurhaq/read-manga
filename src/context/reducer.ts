@@ -8,12 +8,12 @@ export const initialState = {
   selectedChapter: {},
 };
 
-const reducer: React.Reducer<InitialState, IAction> = (state, action) => {
-  switch (action.type) {
+const reducer: React.Reducer<InitialState, IAction> = (state, { type, payload }) => {
+  switch (type) {
     case SET_SELECTED_MANGA:
-      return { ...state, selectedManga: action.payload };
+      return { ...state, selectedManga: payload };
     case SET_SELECTED_CHAPTER:
-      return { ...state, selectedChapter: action.payload };
+      return { ...state, selectedChapter: payload };
     default:
       return state;
   }
