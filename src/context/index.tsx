@@ -16,7 +16,6 @@ const GlobalContextProvider: React.FC<IGlobalProvider> = ({ children }) => {
   const setSelectedManga = (data: Manga) => {
     dispatch({ type: SET_SELECTED_MANGA, payload: data });
   };
-
   const setSelectedChapter = (data: Chapter) => {
     dispatch({ type: SET_SELECTED_CHAPTER, payload: data });
   };
