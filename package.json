@@ -36,6 +36,7 @@
     "prepare": "husky install",
     "build-dev": "rm -rf build && cross-env REACT_APP_NODE_ENV=development INLINE_RUNTIME_CHUNK=false GENERATE_SOURCEMAP=false react-scripts build",
     "build-prod": "rm -rf build && cross-env REACT_APP_NODE_ENV=production INLINE_RUNTIME_CHUNK=false GENERATE_SOURCEMAP=false react-scripts build",
+    "deploy-prod": "npm run build-prod && aws s3 rm s3://hris-web-app/ --recursive && aws s3 cp ./build s3://hris-web-app/ --recursive --acl public-read",
     "test-coverage": "react-scripts test --silent --coverage --watchAll=false",
     "test": "react-scripts test --verbose",
     "pretty-fix": "pretty-quick --staged",
