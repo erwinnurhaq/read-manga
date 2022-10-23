@@ -25,7 +25,7 @@ const isAuthed = t.middleware(({ next, ctx }) => {
   //     session: ctx.session,
   //   },
   // });
-  return next()
+  return next();
 });
 
 // Protected procedures for logged in users only
